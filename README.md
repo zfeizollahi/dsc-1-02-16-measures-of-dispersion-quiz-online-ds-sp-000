@@ -23,8 +23,15 @@ Which sample has the larger spread of observations?
 
 
 ```python
-# Your answer here 
+2
 ```
+
+
+
+
+    2
+
+
 
 ## Exercise 2
 Consider the following ordered set of data
@@ -39,8 +46,17 @@ Consider the following ordered set of data
 
 
 ```python
-# Your answer here 
+import numpy as np
+dist = [4, 4, 4, 9, 5, 0, 5, 1, 5, 3, 5, 7, 5, 8, 6, 2, 6, 6, 6, 6, 6, 8, 7, 1, 7, 5, 7, 7, 8, 0, 8, 5]
+def iqr(dist):
+    return np.percentile(dist, 75) - np.percentile(dist, 25)
+
+print(iqr(dist))
+
 ```
+
+    3.0
+
 
 ### Exercise 3
 Create a box-and-whisker plot for the judges' scores for an artist's performances in a talent competition.
@@ -59,13 +75,38 @@ Create a box plot in matplotlib to identify the median for giving a final score 
 
 
 ```python
-# Your answer here 
+import matplotlib.pyplot as plt
+plt.style.use('ggplot')
+dict = {"Evan L  ":  52,
+"Nicole S":  50,
+"Pamela A":  47,
+"Chad O  ":  44,
+"Erin A  ":  39,
+"Jake P  ":  38,
+"Niecy N ":  36,
+"Kate G  ":  32}
+
+print(np.median(list(dict.values())))
+
+plt.boxplot(list(dict.values()), showfliers=True)
+plt.show()
 ```
+
+    41.5
+
+
+
+![png](index_files/index_6_1.png)
+
 
 
 ```python
-# # Your answer here 
+print(np.median(list(dict.values())))
+
 ```
+
+    41.5
+
 
 ### Exercise 4
 Imagine that the number of marriages registered over a 10 year period were as follows:
@@ -98,7 +139,7 @@ Using the data above:
 
 
 ```python
-# Q1 = 38.814 Q3 = 40.812 # Your answer here 
+# Your answer here 
 ```
 
 #### Calculate the interquartile range

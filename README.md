@@ -76,6 +76,7 @@ Create a box plot in matplotlib to identify the median for giving a final score 
 
 ```python
 import matplotlib.pyplot as plt
+%matplotlib inline
 plt.style.use('ggplot')
 dict = {"Evan L  ":  52,
 "Nicole S":  50,
@@ -132,15 +133,42 @@ Using the data above:
 
 
 ```python
-# Your answer here 
+# Your answer here
+marriages_dict = {"1":40650,
+"2":40812,
+"3":41300,
+"4":41450,
+"5":39594,
+"6":40734,
+"7":39993,
+"8":38814,
+"9":37828,
+"10":35716}
+np.median(list(marriages_dict.values()))
 ```
+
+
+
+
+    40321.5
+
+
 
 #### Find the upper and lower quartiles
 
 
 ```python
 # Your answer here 
+m_values = list(marriages_dict.values())
+upper_q = np.percentile(m_values, 75)
+lower_q = np.percentile(m_values, 25)
+print(upper_q)
+print(lower_q)
 ```
+
+    40792.5
+    39009.0
+
 
 #### Calculate the interquartile range
 
@@ -148,11 +176,27 @@ Using the data above:
 
 ```python
 # Your answer here 
+IQR = upper_q - lower_q
+print(IQR)
 ```
+
+    1783.5
+
 
 #### Plot a boxplot to verify your answers
 
 
 ```python
 # Your answer here 
+plt.boxplot(m_values, showfliers=True)
+plt.show()
+```
+
+
+![png](index_files/index_15_0.png)
+
+
+
+```python
+
 ```
